@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="racunRepository" class="org.example.repo.RacunRepository">
+
+    </bean>
+    <bean id="racunService" class="org.example.service.RacunService">
+        <property name="racunRepository" ref="racunRepository"/>
+    </bean>
+    <bean id="racunView" class="org.example.view.RacunView">
+        <constructor-arg name="racunService" ref="racunService"/>
+    </bean>
+</beans>
